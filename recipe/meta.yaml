@@ -1,5 +1,5 @@
 {% set name = "python-build" %}
-{% set version = "0.1.0" %}
+{% set version = "0.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/b/build/build-{{ version }}.tar.gz
-  sha256: 08b2b58098ff617d1154056c79f8a70beed18f7cfa710bca23a072196910d5b4
+  sha256: 5279e61e5e07bd9b4ba46d18bca00e95d725f2a070cd8151385b2d8bf4194ae6
 
 build:
   number: 0
@@ -24,7 +24,7 @@ requirements:
     - python >3.4
     - importlib-metadata
     - packaging
-    - pep517
+    - pep517 >=0.9
     - toml
 
 test:
