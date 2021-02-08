@@ -24,7 +24,7 @@ requirements:
     - python >3.4
     - importlib-metadata
     - packaging
-    - pep517
+    - pep517 >=0.9
     - toml
 
 test:
