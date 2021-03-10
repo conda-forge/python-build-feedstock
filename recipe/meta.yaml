@@ -1,5 +1,5 @@
 {% set name = "python-build" %}
-{% set version = "0.3.0" %}
+{% set version = "0.3.1.post1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/b/build/build-{{ version }}.tar.gz
-  sha256: 0eb95b2c8d770d7c4c9b92c68c227c350bbf65f3ec83551ace9097c18cc15fdd
+  sha256: 85123bf327404e68142b1eb2a8298b052e984ad5b12738549688371e6337c73a
 
 build:
   number: 0
