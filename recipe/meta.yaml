@@ -1,5 +1,5 @@
 {% set name = "python-build" %}
-{% set version = "0.7.0" %}
+{% set version = "0.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/b/build/build-{{ version }}.tar.gz
-  sha256: 1aaadcd69338252ade4f7ec1265e1a19184bf916d84c9b7df095f423948cb89f
+  sha256: 887a6d471c901b1a6e6574ebaeeebb45e5269a79d095fe9a8f88d6614ed2e5f0
 
 build:
   number: 0
@@ -18,14 +18,15 @@ build:
 
 requirements:
   host:
-    - python >3.4
+    - python >=3.6
     - pip
   run:
-    - python >3.4
-    - importlib-metadata
-    - packaging
-    - pep517 >=0.9
-    - toml
+    - python >=3.6
+    - colorama
+    - importlib-metadata >=0.22
+    - packaging >=19.0
+    - pep517 >=0.9.1
+    - tomli >=1.0.0
 
 test:
   imports:
@@ -40,7 +41,7 @@ about:
   home: https://github.com/pypa/build
   license: MIT
   license_file: LICENSE
-  summary: A simple, correct PEP517 package builder
+  summary: A simple, correct PEP 517 build frontend
 
 extra:
   recipe-maintainers:
