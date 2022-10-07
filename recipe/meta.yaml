@@ -10,32 +10,54 @@ source:
   sha256: 887a6d471c901b1a6e6574ebaeeebb45e5269a79d095fe9a8f88d6614ed2e5f0
 
 build:
-  number: 0
-  noarch: python
-  entry_points:
-    - python-build = build.__main__:entrypoint
-  script: {{ PYTHON }} -m pip install . -vv
+  number: 1
 
-requirements:
-  host:
-    - python >=3.6
-    - pip
-  run:
-    - python >=3.6
-    - colorama
-    - importlib-metadata >=0.22
-    - packaging >=19.0
-    - pep517 >=0.9.1
-    - tomli >=1.0.0
+outputs:
+  - name: {{ name }}
+    build:
+      noarch: python
+      entry_points:
+        - python-build = build.__main__:entrypoint
+        script: {{ PYTHON }} -m pip install . -vv
 
-test:
-  imports:
-    - build
-  commands:
-    - pip check
-    - python-build --help
-  requires:
-    - pip
+    requirements:
+      host:
+        - python >=3.6
+        - pip
+      run:
+        - python >=3.6
+        - colorama
+        - importlib-metadata >=0.22
+        - packaging >=19.0
+        - pep517 >=0.9.1
+        - tomli >=1.0.0
+
+    test:
+      imports:
+        - build
+      commands:
+        - pip check
+        - python-build --help
+      requires:
+        - pip
+
+
+  - name: build
+    build:
+      noarch: python
+
+    requirements:
+      run:
+        - {{ pin_subpackage(name, exact=True) }}
+
+    test:
+      imports:
+        - build
+      commands:
+        - pip check
+        - python-build --help
+      requires:
+        - pip
 
 about:
   home: https://github.com/pypa/build
@@ -46,3 +68,4 @@ about:
 extra:
   recipe-maintainers:
     - ocefpaf
+    - zklaus
