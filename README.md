@@ -7,7 +7,7 @@ Package license: MIT
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/python-build-feedstock/blob/main/LICENSE.txt)
 
-Summary: A simple, correct PEP517 package builder
+Summary: A simple, correct PEP 517 build frontend
 
 Current build status
 ====================
@@ -27,6 +27,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-build-green.svg)](https://anaconda.org/conda-forge/build) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/build.svg)](https://anaconda.org/conda-forge/build) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/build.svg)](https://anaconda.org/conda-forge/build) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/build.svg)](https://anaconda.org/conda-forge/build) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-python--build-green.svg)](https://anaconda.org/conda-forge/python-build) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/python-build.svg)](https://anaconda.org/conda-forge/python-build) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/python-build.svg)](https://anaconda.org/conda-forge/python-build) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/python-build.svg)](https://anaconda.org/conda-forge/python-build) |
 
 Installing python-build
@@ -39,41 +40,41 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `python-build` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `build, python-build` can be installed with `conda`:
 
 ```
-conda install python-build
-```
-
-or with `mamba`:
-
-```
-mamba install python-build
-```
-
-It is possible to list all of the versions of `python-build` available on your platform with `conda`:
-
-```
-conda search python-build --channel conda-forge
+conda install build python-build
 ```
 
 or with `mamba`:
 
 ```
-mamba search python-build --channel conda-forge
+mamba install build python-build
+```
+
+It is possible to list all of the versions of `build` available on your platform with `conda`:
+
+```
+conda search build --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search build --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search python-build --channel conda-forge
+mamba repoquery search build --channel conda-forge
 
-# List packages depending on `python-build`:
-mamba repoquery whoneeds python-build --channel conda-forge
+# List packages depending on `build`:
+mamba repoquery whoneeds build --channel conda-forge
 
-# List dependencies of `python-build`:
-mamba repoquery depends python-build --channel conda-forge
+# List dependencies of `build`:
+mamba repoquery depends build --channel conda-forge
 ```
 
 
@@ -144,4 +145,5 @@ Feedstock Maintainers
 =====================
 
 * [@ocefpaf](https://github.com/ocefpaf/)
+* [@zklaus](https://github.com/zklaus/)
 
