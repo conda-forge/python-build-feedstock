@@ -12,6 +12,11 @@ source:
 build:
   number: 1
 
+requirements:
+  host:
+    - python >=3.6
+    - pip
+
 outputs:
   - name: {{ name }}
     build:
