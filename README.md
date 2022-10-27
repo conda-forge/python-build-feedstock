@@ -7,7 +7,7 @@ Package license: MIT
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/python-build-feedstock/blob/main/LICENSE.txt)
 
-Summary: A simple, correct PEP517 package builder
+Summary: A simple, correct PEP 517 build frontend
 
 Current build status
 ====================
