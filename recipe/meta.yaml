@@ -27,6 +27,8 @@ requirements:
     - packaging >=19.0
     - pep517 >=0.9.1
     - tomli >=1.0.0
+  run_constrained:
+    - build <0
 
 test:
   imports:
