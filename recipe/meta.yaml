@@ -10,7 +10,7 @@ source:
   sha256: 1a07724e891cbd898923145eb7752ee7653674c511378eb9c7691aab1612bc3c
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - python-build = build.__main__:entrypoint
