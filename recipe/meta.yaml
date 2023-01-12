@@ -20,13 +20,13 @@ requirements:
   host:
     - python >=3.7
     - pip
-    - flit-core
+    - flit-core >=3.4
   run:
     - python >=3.7
     - colorama
     - importlib-metadata >=0.22
     - packaging >=19.0
-    - pyproject-hooks
+    - pyproject_hooks
     - tomli >=1.1.0
   run_constrained:
     - build <0
