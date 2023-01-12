@@ -18,15 +18,16 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.7
     - pip
+    - flit-core
   run:
-    - python >=3.6
+    - python >=3.7
     - colorama
     - importlib-metadata >=0.22
     - packaging >=19.0
-    - pep517 >=0.9.1
-    - tomli >=1.0.0
+    - pyproject-hooks
+    - tomli >=1.1.0
   run_constrained:
     - build <0
 
