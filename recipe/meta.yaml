@@ -47,6 +47,7 @@ about:
   license: MIT
   license_file: LICENSE
   summary: A simple, correct PEP 517 build frontend
+  doc_url: https://pypa-build.readthedocs.io
 
 extra:
   recipe-maintainers:
