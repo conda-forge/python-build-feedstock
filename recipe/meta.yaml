@@ -10,10 +10,11 @@ source:
   sha256: d5b71264afdb5951d6704482aac78de887c80691c52b88a9ad195983ca2c9269
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - python-build = build.__main__:entrypoint
+    - pyproject-build = build.__main__:entrypoint
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -37,6 +38,7 @@ test:
   commands:
     - pip check
     - python-build --help
+    - pyproject-build --help
   requires:
     - pip
 
@@ -45,6 +47,7 @@ about:
   license: MIT
   license_file: LICENSE
   summary: A simple, correct PEP 517 build frontend
+  doc_url: https://pypa-build.readthedocs.io
 
 extra:
   recipe-maintainers:
