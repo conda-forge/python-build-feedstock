@@ -1,5 +1,5 @@
 {% set name = "python-build" %}
-{% set version = "1.1.1" %}
+{% set version = "1.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/b/build/build-{{ version }}.tar.gz
-  sha256: 8eea65bb45b1aac2e734ba2cc8dad3a6d97d97901a395bd0ed3e7b46953d2a31
+  sha256: 526263f4870c26f26c433545579475377b2b7588b6f1eac76a001e873ae3e19d
 
 build:
   number: 0
@@ -19,11 +19,11 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.8
     - pip
-    - flit-core >=3.4
+    - flit-core >=3.8
   run:
-    - python >=3.7
+    - python >=3.8
     - colorama
     - importlib-metadata >=4.6
     - packaging >=19.0
