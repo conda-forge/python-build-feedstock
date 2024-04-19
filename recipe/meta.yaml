@@ -10,37 +10,65 @@ source:
   sha256: 526263f4870c26f26c433545579475377b2b7588b6f1eac76a001e873ae3e19d
 
 build:
-  number: 0
-  noarch: python
-  entry_points:
-    - python-build = build.__main__:entrypoint
-    - pyproject-build = build.__main__:entrypoint
-  script: {{ PYTHON }} -m pip install . -vv
+  number: 1
 
 requirements:
   host:
     - python >=3.8
     - pip
     - flit-core >=3.8
-  run:
-    - python >=3.8
-    - colorama
-    - importlib-metadata >=4.6
-    - packaging >=19.0
-    - pyproject_hooks
-    - tomli >=1.1.0
-  run_constrained:
-    - build <0
 
-test:
-  imports:
-    - build
-  commands:
-    - pip check
-    - python-build --help
-    - pyproject-build --help
-  requires:
-    - pip
+outputs:
+  - name: {{ name }}
+    build:
+      noarch: python
+      entry_points:
+        - python-build = build.__main__:entrypoint
+        - pyproject-build = build.__main__:entrypoint
+      script: {{ PYTHON }} -m pip install . -vv
+
+    requirements:
+      host:
+        - python >=3.8
+        - pip
+        - flit-core >=3.8
+      run:
+        - python >=3.8
+        - colorama
+        - importlib-metadata >=4.6
+        - packaging >=19.0
+        - pyproject_hooks
+        - tomli >=1.1.0
+
+    test:
+      imports:
+        - build
+      commands:
+        - pip check
+        - python-build --help
+        - pyproject-build --help
+      requires:
+        - pip
+
+  - name: build
+    build:
+      noarch: python
+
+    requirements:
+      host:
+        - python >=3.8
+      run:
+        - {{ pin_subpackage(name, exact=True) }}
+
+    test:
+      imports:
+        - build
+      commands:
+        - pip check
+        - python-build --help
+        - pyproject-build --help
+      requires:
+        - pip
 
 about:
   home: https://github.com/pypa/build
