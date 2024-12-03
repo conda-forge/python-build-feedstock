@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/b/build/build-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/b/build/build-{{ version }}.tar.gz
   sha256: b36993e92ca9375a219c99e606a122ff365a760a2d4bba0caa09bd5278b608b7
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - python-build = build.__main__:entrypoint
@@ -19,11 +19,11 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
     - flit-core >=3.8
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - colorama
     - importlib-metadata >=4.6
     - packaging >=19.0
@@ -41,6 +41,7 @@ test:
     - pyproject-build --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/pypa/build
