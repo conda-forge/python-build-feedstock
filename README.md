@@ -9,7 +9,7 @@ Package license: MIT
 
 Summary: A simple, correct PEP 517 build frontend
 
-Documentation: https://pypa-build.readthedocs.io
+Documentation: https://pypa-build.readthedocs.io/
 
 Current build status
 ====================
