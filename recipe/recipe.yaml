@@ -1,0 +1,63 @@
+schema_version: 1
+
+context:
+  name: python-build
+  version: 1.2.2.post1
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/b/build/build-${{ version }}.tar.gz
+  sha256: b36993e92ca9375a219c99e606a122ff365a760a2d4bba0caa09bd5278b608b7
+
+build:
+  number: 2
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points:
+      - python-build = build.__main__:entrypoint
+      - pyproject-build = build.__main__:entrypoint
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - flit-core >=3.8
+  run:
+    - python >=${{ python_min }}
+    - colorama
+    - importlib-metadata >=4.6
+    - packaging >=19.0
+    - pyproject_hooks
+    - tomli >=1.1.0
+  run_constraints:
+    - build <0
+
+tests:
+  - python:
+      imports:
+        - build
+      python_version: ${{ python_min }}.*
+      pip_check: true
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+    script:
+      - python-build --help
+      - pyproject-build --help
+
+about:
+  license: MIT
+  license_file: LICENSE
+  summary: A simple, correct PEP 517 build frontend
+  homepage: https://github.com/pypa/build
+  documentation: https://pypa-build.readthedocs.io
+
+extra:
+  recipe-maintainers:
+    - ocefpaf
+    - henryiii
