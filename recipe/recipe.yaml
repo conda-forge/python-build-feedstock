@@ -41,12 +41,12 @@ tests:
       imports:
         - build
       python_version: ${{ python_min }}.*
+      pip_check: true
   - requirements:
       run:
         - pip
         - python ${{ python_min }}.*
     script:
-      - pip check
       - python-build --help
       - pyproject-build --help
 
