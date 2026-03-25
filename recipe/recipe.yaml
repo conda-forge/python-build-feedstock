@@ -3,6 +3,7 @@ schema_version: 1
 context:
   name: python-build
   version: "1.4.2"
+  python_min: "3.9"
 
 package:
   name: ${{ name|lower }}
@@ -44,7 +45,6 @@ tests:
       python_version: ${{ python_min }}
   - requirements:
       run:
-        - pip
         - python ${{ python_min }}.*
     script:
       - python-build --help
