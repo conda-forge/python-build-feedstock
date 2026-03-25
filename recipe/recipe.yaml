@@ -26,12 +26,12 @@ requirements:
   host:
     - python ${{ python_min }}.*
     - pip
-    - flit-core >=3.8
+    - flit-core >=3.11
   run:
     - python >=${{ python_min }}
     - colorama
     - importlib-metadata >=4.6
-    - packaging >=19.0
+    - packaging >=24.0
     - pyproject_hooks
     - tomli >=1.1.0
   run_constraints:
