@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: python-build
-  version: "1.4.3"
+  version: "1.4.4"
   python_min: "3.9"
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/b/build/build-${{ version }}.tar.gz
-  sha256: 5aa4231ae0e807efdf1fd0623e07366eca2ab215921345a2e38acdd5d0fa0a74
+  sha256: f832ae053061f3fb524af812dc94b8b84bac6880cd587630e3b5d91a6a9c1703
 
 build:
   number: 0
