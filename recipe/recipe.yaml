@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: python-build
-  version: "1.5.0"
+  version: "1.5.1"
   python_min: "3.10"
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/b/build/build-${{ version }}.tar.gz
-  sha256: 302c22c3ba2a0fd5f3911918651341ebb3896176cbdec15bd421f80b1afc7647
+  sha256: 94e17f1db803ab22f46049376c44c8437c52090f0dfdf1adc43df56542d644fb
 
 build:
   number: 0
