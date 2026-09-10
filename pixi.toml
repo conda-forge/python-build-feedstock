@@ -5,7 +5,7 @@
 
 [workspace]
 name = "python-build-feedstock"
-version = "2026.8.9"  # conda-smithy version used to generate this file
+version = "2026.9.1"  # conda-smithy version used to generate this file
 description = "Pixi configuration for conda-forge/python-build-feedstock"
 authors = ["@conda-forge/python-build"]
 channels = ["conda-forge"]
@@ -38,11 +38,11 @@ description = "List contents of all packages found in rattler-build build direct
 cmd = "rattler-build build --recipe recipe"
 description = "Build python-build-feedstock directly (without setup scripts), no particular variant specified"
 [feature.build.tasks."build-linux_64_"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_.yaml"
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_.yaml "
 description = "Build python-build-feedstock with variant linux_64_ directly (without setup scripts)"
 [feature.build.tasks."debug-linux_64_"]
-cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_64_.yaml"
-description = "Build python-build-feedstock with variant linux_64_ directly (without setup scripts)"
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_64_.yaml "
+description = "Debug python-build-feedstock with variant linux_64_ directly (without setup scripts)"
 [feature.build.tasks."inspect-linux_64_"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_.yaml"
 description = "List contents of python-build-feedstock packages built for variant linux_64_"
