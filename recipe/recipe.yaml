@@ -55,9 +55,9 @@ tests:
 about:
   license: MIT
   license_file: LICENSE
-  summary: A simple, correct PEP 517 build frontend
+  summary: A simple, correct Python build frontend
   homepage: https://github.com/pypa/build
-  documentation: https://pypa-build.readthedocs.io
+  documentation: https://build.pypa.io
 
 extra:
   recipe-maintainers:
